@@ -9,5 +9,5 @@ class BeerDataSource : RemoteDataSource {
 
     override suspend fun getBeersFiltered(value: String?): List<Beer> = RetrofitInstance.SERVICE.getBeersFiltered("beers/", value)
 
-    override suspend fun getBeer(id: Long): Beer = RetrofitInstance.SERVICE.getBeer("beers/$id")
+    override suspend fun getBeer(id: Long): Beer = RetrofitInstance.SERVICE.getBeer("beers/$id")[0]
 }

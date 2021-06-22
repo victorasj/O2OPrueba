@@ -15,6 +15,6 @@ interface PunkAPI {
 
 
     @GET
-    suspend fun getBeer(@Url url : String) : Beer
+    suspend fun getBeer(@Url url : String) : List<Beer>
 
 }
