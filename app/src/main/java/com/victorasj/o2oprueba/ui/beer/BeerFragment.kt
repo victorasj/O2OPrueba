@@ -38,6 +38,7 @@ class BeerFragment : ScopeFragment() {
             is BeerViewModel.UiModel.ContentBeer -> {
                 binding.beerNameToolbar.title = model.beer.name
                 binding.beerInfo.text = model.beer.description
+                binding.beerAbv.text = model.beer.abv
                 binding.beerImage.loadUrl(model.beer.image_url)
             }
         }
