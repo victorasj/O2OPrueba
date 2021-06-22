@@ -1,0 +1,5 @@
+rootProject.name = "O2OPrueba"
+include ':app'
+include ':domain'
+include ':interactor'
+include ':data'
