@@ -31,6 +31,7 @@ class BeersAdapter(val listener: (Beer) -> Unit) : RecyclerView.Adapter<BeersAda
         private val binding = BeerViewBinding.bind(view)
         fun bind(beer : Beer) = with(binding){
             beerName.text = beer.name
+            beerDescription.text = beer.description
             beer.image_url?.let { beerImage.loadUrl(it) }
         }
     }

@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.victorasj.o2oprueba.EventObserver
 import com.victorasj.o2oprueba.R
 import com.victorasj.o2oprueba.databinding.MainFragmentBinding
@@ -40,7 +41,7 @@ class MainFragment : ScopeFragment() {
         navController = view.findNavController()
 
         adapter = BeersAdapter(viewModel::onBeerClick)
-        binding.recyclerviewBeers.layoutManager = GridLayoutManager(context, 2)
+        binding.recyclerviewBeers.layoutManager = LinearLayoutManager(context)
         binding.recyclerviewBeers.adapter = adapter
         viewModel.beers.observe(viewLifecycleOwner, Observer (::updateUi))
         viewModel.navigateToBeer.observe(viewLifecycleOwner, EventObserver {
