@@ -36,10 +36,12 @@ class BeerFragment : ScopeFragment() {
     private fun UpdateUI(model : BeerViewModel.UiModel){
         when(model){
             is BeerViewModel.UiModel.ContentBeer -> {
-                binding.beerNameToolbar.title = model.beer.name
-                binding.beerInfo.text = model.beer.description
-                binding.beerAbv.text = model.beer.abv
-                binding.beerImage.loadUrl(model.beer.image_url)
+                with(binding){
+                    beerNameToolbar.title = model.beer.name
+                    beerInfo.text = model.beer.description
+                    beerAbv.text = model.beer.abv
+                    beerImage.loadUrl(model.beer.image_url)
+                }
             }
         }
     }
